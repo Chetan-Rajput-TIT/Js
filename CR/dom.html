@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="list">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addListItem(name){
+        const li =document.createElement("li");
+        li.innerHTML=`${name}`;//u can directly use =name instead;
+
+        document.querySelector('.list').appendChild(li);
+    }
+    addListItem("c++");
+    //  optimised way
+    function addOptiListItem(name){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(name));
+        document.querySelector('.list').appendChild(li);
+    } 
+    addOptiListItem('java');
+    const secondlang =document.querySelector("li:nth-child(2)");
+    // const newli = document.querySelector('li')
+    // newli.textContent="mojo";
+    // secondland.replacewith(newli);
+
+    secondlang.innerHTML="css";
+    secondlang.remove();
+</script>
+</html>
